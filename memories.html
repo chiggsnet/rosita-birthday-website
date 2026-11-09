@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#061b55">
+
+    <title>Rosita's Beautiful Memories 💙</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="balloons.css">
+
+    <style>
+        body.memories-page {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(ellipse at top, #1555c9 0%, transparent 55%),
+                linear-gradient(135deg, #020824, #073da9, #020824);
+            color: white;
+        }
+
+        .memories-topbar {
+            padding: 25px 7%;
+        }
+
+        .back-celebration {
+            display: inline-block;
+            color: #e2e8f0;
+            text-decoration: none;
+            border: 1px solid silver;
+            padding: 12px 22px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .back-celebration:hover {
+            background: white;
+            color: #061b55;
+        }
+
+        .memories-page .memories-section {
+            padding-top: 45px;
+        }
+
+        .memories-page .memories-heading {
+            margin-bottom: 65px;
+        }
+
+        .memories-page .memory-grid {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .video-memories {
+            position: relative;
+            padding: 40px 7% 100px;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at center, rgba(21, 85, 201, 0.24), transparent 68%);
+        }
+
+        .video-memories-heading {
+            max-width: 800px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .video-memories-heading h2 {
+            margin: 14px 0 0;
+            color: #fff;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(32px, 5vw, 58px);
+            line-height: 1.15;
+            letter-spacing: 1px;
+            text-shadow: 0 0 24px rgba(220, 230, 255, 0.18);
+        }
+
+        .video-memories-heading h2::after {
+            display: block;
+            width: 90px;
+            height: 1px;
+            margin: 22px auto 0;
+            background: linear-gradient(90deg, transparent, #dce6ff, transparent);
+            content: "";
+        }
+
+        .video-memory-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .video-memory-card {
+            position: relative;
+            min-width: 0;
+            padding: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(220, 230, 255, 0.55);
+            border-radius: 14px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035));
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 24px rgba(192, 211, 255, 0.08);
+        }
+
+        .video-memory-card::before,
+        .video-memory-card::after {
+            position: absolute;
+            z-index: 1;
+            width: 22px;
+            height: 22px;
+            border-color: rgba(226, 232, 240, 0.8);
+            border-style: solid;
+            content: "";
+            pointer-events: none;
+        }
+
+        .video-memory-card::before {
+            top: 5px;
+            left: 5px;
+            border-width: 1px 0 0 1px;
+        }
+
+        .video-memory-card::after {
+            right: 5px;
+            bottom: 5px;
+            border-width: 0 1px 1px 0;
+        }
+
+        .video-memory-card video {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            background: #020824;
+        }
+
+        .video-memory-caption {
+            margin: 16px 8px 6px;
+            color: #e2e8f0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(18px, 2vw, 23px);
+            font-style: italic;
+            line-height: 1.4;
+            text-align: center;
+            text-shadow: 0 0 18px rgba(220, 230, 255, 0.18);
+        }
+
+        .video-memories-closing {
+            max-width: 720px;
+            margin: 54px auto 0;
+            color: #dce6f5;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(21px, 3vw, 30px);
+            line-height: 1.5;
+            text-align: center;
+            text-shadow: 0 0 22px rgba(220, 230, 255, 0.2);
+        }
+
+        .video-memories-signature {
+            display: block;
+            margin-top: 12px;
+            color: #f1f5fb;
+            font-family: 'Segoe Script', 'Bradley Hand', 'Apple Chancery', cursive;
+            font-size: clamp(22px, 3vw, 31px);
+            font-style: italic;
+            line-height: 1.3;
+        }
+
+        .memories-game-link-wrap {
+            width: min(100% - 36px, 380px);
+            margin: 0 auto 36px;
+            text-align: center;
+        }
+
+        .memories-game-link {
+            width: 100%;
+            min-height: 54px;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px clamp(12px, 4vw, 24px);
+            font-size: clamp(9px, 2.7vw, 11px);
+            letter-spacing: 0.7px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 700px) {
+            .video-memories {
+                padding: 25px 18px 70px;
+            }
+
+            .video-memory-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 22px;
+            }
+
+            .video-memories-heading {
+                margin-bottom: 32px;
+            }
+
+            .video-memories-closing {
+                margin-top: 38px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .memories-topbar {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="memories-page" id="top">
+
+    <header class="memories-topbar">
+        <a href="index.html" class="back-celebration">
+            ← BACK TO CELEBRATION
+        </a>
+    </header>
+
+    <section class="memories-section" id="memoriesSection" data-floating-balloons>
+
+        <div class="memories-heading">
+            <span class="gallery-label">
+                ✦ A COLLECTION OF BEAUTIFUL MOMENTS ✦
+            </span>
+
+            <h2>
+                A Journey of
+                <span>Beautiful Memories.</span>
+            </h2>
+
+            <p>
+                Every picture tells a story. Every moment holds
+                a little piece of the beautiful person you are.
+                This is a celebration of you, Rosita.
+            </p>
+
+            <div class="gallery-divider">✧</div>
+        </div>
+
+        <div class="memory-grid">
+
+            <!-- MEMORY 01 -->
+            <article class="memory-card">
+                <div class="memory-image">
+                    <img src="images/rosita-1.jpg" alt="Rosita - A rare kind of beautiful">
+                </div>
+                <div class="memory-text">
+                    <span class="memory-number">01 — A SHINING STAR</span>
+                    <h3>A Beautiful Soul From Birth</h3>
+                    <p>
+                        Some people possess a beauty that goes far beyond
+                        what the eyes can see. It's in their hearts,
+                        their kindness and the little ways they make
+                        people feel special. Rosita, your existence
+                        is a gift, and the world is brighter because
+                        you are in it.
+                    </p>
+                </div>
+            </article>
+
+            <!-- MEMORY 02 -->
+            <article class="memory-card">
+                <div class="memory-image">
+                    <img src="images/rosita-2.jpg" alt="Rosita - Grace and elegance">
+                </div>
+                <div class="memory-text">
+                    <span class="memory-number">02 — GRACE & ELEGANCE</span>
+                    <h3>A Rare Kind Of Beauty</h3>
+                    <p>
+                        There's something so effortlessly beautiful
+                        about you. The elegance, the confidence,
+                        the warmth and the way you carry yourself.
+                        Beyond the outward beauty is a heart that
+                        makes you even more admirable.
+                    </p>
+                </div>
+            </article>
+
+            <!-- MEMORY 03 -->
+            <article class="memory-card">
+                <div class="memory-image">
+                    <img src="images/rosita-3.jpg" alt="Rosita - A heart of gold">
+                </div>
+                <div class="memory-text">
+                    <span class="memory-number">03 — ONE OF A KIND</span>
+                    <h3>There Is Only One YOU</h3>
+                    <p>
+                        Your personality, your heart and your beautiful way of seeing the world make you truly one of a kind. 
+                    </p>
+                </div>
+            </article>
+
+            <!-- MEMORY 04 -->
+            <article class="memory-card">
+                <div class="memory-image">
+                    <img src="images/rosita-4.jpg" alt="Rosita - Beautiful moments">
+                </div>
+                <div class="memory-text">
+                    <span class="memory-number">04 — THE WOMAN BEHIND THE SMILE</span>
+                    <h3>Excellence in Everything</h3>
+                    <p>
+                        There is something admirable about a woman
+                        who continues to show up, give her best
+                        and pursue what matters to her. May your
+                        efforts never go unnoticed, may your talents
+                        create room for you, and may success meet
+                        you at every stage of your journey.
+                    </p>
+                </div>
+            </article>
+
+            <!-- MEMORY 05 -->
+            <article class="memory-card">
+                <div class="memory-image">
+                    <img src="images/rosita-5.jpg" alt="Rosita - One of a kind">
+                </div>
+                <div class="memory-text">
+                    <span class="memory-number">05 — PURPOSE AND AMBITION</span>
+                    <h3>More Than Just Dreams</h3>
+                    <p>
+                        A girl with dreams, responsibilities and ambitions of her
+                        own. Every effort you make, every challenge
+                        you face and every step you take towards
+                        becoming better deserves recognition.
+                    </p>
+                </div>
+            </article>
+
+            <!-- MEMORY 06 -->
+            <article class="memory-card">
+                <div class="memory-image">
+                    <img src="images/rosita-6.jpg" alt="Rosita - A life worth celebrating">
+                </div>
+                <div class="memory-text">
+                    <span class="memory-number">06 — LITTLE MOMENTS</span>
+                    <h3>Moments Worth Keeping</h3>
+                    <p>
+                        Sometimes, it's the simplest moments that become
+                        the most precious memories. A smile, a laugh,
+                        a beautiful photograph or just a moment of being
+                        yourself. Every picture holds a little reminder
+                        of the wonderful person you are.
+                    </p>
+                </div>
+            </article>
+
+            <!-- MEMORY 08 -->
+            <article class="memory-card">
+                <div class="memory-image">
+                    <img src="images/rosita-7.jpg" alt="Rosita - Purpose and ambition">
+                </div>
+                <div class="memory-text">
+                    <span class="memory-number">07 — FOREVER CELEBRATED</span>
+                    <h3>A Life Worth Celebrating</h3>
+                    <p>
+                        May life surprise you with beautiful opportunities,
+                        genuine happiness, answered prayers and everything
+                        your heart has quietly wished for. You deserve
+                        to be celebrated, Rosita, not just on your birthday,
+                        but every single day.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="video-memories" aria-labelledby="videoMemoriesHeading" data-floating-balloons>
+        <div class="video-memories-heading">
+            <span class="gallery-label">✦ MOMENTS TO TREASURE ✦</span>
+            <h2 id="videoMemoriesHeading">BEAUTIFUL MOMENTS, FOREVER MEMORIES</h2>
+        </div>
+
+        <div class="video-memory-grid">
+            <article class="video-memory-card">
+                <video controls playsinline preload="metadata" aria-label="Rosita and her friend sharing a laugh about their hair">
+                    <source src="videos/rosita-video-2.mp4" type="video/mp4">
+                    Your browser does not support HTML video.
+                </video>
+                <p class="video-memory-caption">She would never accept my hair is longer than hers 😂</p>
+            </article>
+
+            <article class="video-memory-card">
+                <video controls playsinline preload="metadata" aria-label="Rosita and her friend sharing a chat">
+                    <source src="videos/rosita-video-1.mp4" type="video/mp4">
+                    Your browser does not support HTML video.
+                </video>
+                <p class="video-memory-caption">My surest gist plug 🙂‍↔️💕</p>
+            </article>
+        </div>
+
+        <p class="video-memories-closing">
+            Grateful for moments like these with you...
+            <span class="video-memories-signature">With love, Mirabel ❤️</span>
+        </p>
+    </section>
+     
+    <div class="memories-game-link-wrap">
+        <a href="games.html" class="view-memories-button memories-game-link">
+            PLAY WITH THE BIRTHDAY GIRL
+            <span>→</span>
+        </a>
+    </div>
+
+    <!-- PHOTO LIGHTBOX -->
+    <div class="photo-lightbox" id="photoLightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close photo">
+            &times;
+        </button>
+
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">
+            &#10094;
+        </button>
+
+        <img src="" alt="Rosita's photograph" id="lightboxImage">
+
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">
+            &#10095;
+        </button>
+
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+
+    <script src="balloons.js"></script>
+    <script src="memories.js"></script>
+
+</body>
+</html>

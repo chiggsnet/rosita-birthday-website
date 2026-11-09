@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#061b55">
+    <meta name="description" content="Play a little appreciation game and write a birthday wish for Rosita.">
+
+    <title>Play & Wish | Rosita's Celebration</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="games.css">
+    <link rel="stylesheet" href="balloons.css">
+</head>
+<body class="games-page" id="top" data-floating-balloons>
+    <header class="games-topbar">
+        <a class="games-back-link" href="index.html">← BACK TO CELEBRATION</a>
+        <span class="games-brand">ROSITA <span>✦</span> CELEBRATION</span>
+    </header>
+
+    <main>
+        <section class="games-hero" aria-labelledby="gamesTitle">
+            <p class="games-eyebrow">✦ A LITTLE MORE JOY ✦</p>
+            <h1 id="gamesTitle">The Fun Doesn't <span>End Here.</span></h1>
+            <p>Celebrate what makes Rosita special, then leave a birthday wish from the heart.</p>
+            <div class="games-hero-divider" aria-hidden="true">✧</div>
+        </section>
+
+        <div class="games-layout">
+            <section class="experience-card appreciation-card" aria-labelledby="appreciationTitle">
+                <div class="experience-heading">
+                    <span class="experience-number">01 <span>— A CELEBRATION GAME</span></span>
+                    <h2 id="appreciationTitle">HOW MUCH DO YOU <span>APPRECIATE ROSITA?</span></h2>
+                    <p class="experience-intro">Every beautiful person deserves to be reminded of what makes them special. Let's celebrate the qualities that make Rosita unforgettable.</p>
+                </div>
+
+                <div class="appreciation-stage" id="appreciationIntro">
+                    <div class="quality-emblem" aria-hidden="true">✧</div>
+                    <button class="games-primary-button" id="startGameButton" type="button">START THE GAME <span>→</span></button>
+                </div>
+
+                <div class="appreciation-stage" id="appreciationChoices" hidden>
+                    <p class="stage-prompt">Choose every quality you appreciate.</p>
+                    <div class="quality-grid" role="group" aria-label="Choose qualities you appreciate about Rosita">
+                        <button class="quality-option" type="button" aria-pressed="false" data-quality="Her Kindness"><span class="quality-symbol" aria-hidden="true">♡</span><span>Her Kindness</span><span class="quality-check" aria-hidden="true">✓</span></button>
+                        <button class="quality-option" type="button" aria-pressed="false" data-quality="Her Beauty"><span class="quality-symbol" aria-hidden="true">✧</span><span>Her Beauty</span><span class="quality-check" aria-hidden="true">✓</span></button>
+                        <button class="quality-option" type="button" aria-pressed="false" data-quality="Her Intelligence"><span class="quality-symbol" aria-hidden="true">✦</span><span>Her Intelligence</span><span class="quality-check" aria-hidden="true">✓</span></button>
+                        <button class="quality-option" type="button" aria-pressed="false" data-quality="Her Confidence"><span class="quality-symbol" aria-hidden="true">♛</span><span>Her Confidence</span><span class="quality-check" aria-hidden="true">✓</span></button>
+                        <button class="quality-option" type="button" aria-pressed="false" data-quality="Her Generosity"><span class="quality-symbol" aria-hidden="true">❋</span><span>Her Generosity</span><span class="quality-check" aria-hidden="true">✓</span></button>
+                    </div>
+                    <p class="selection-hint" id="selectionHint" aria-live="polite">Select at least one quality to continue.</p>
+                    <button class="games-primary-button" id="continueGameButton" type="button" disabled>CONTINUE <span>→</span></button>
+                </div>
+
+                <div class="appreciation-stage balloon-stage" id="balloonStage" hidden>
+                    <h3 class="balloon-heading" id="balloonHeading" tabindex="-1">CATCH THE SILVER BALLOON!</h3>
+                    <p class="balloon-instruction">A little surprise is floating away! Catch six silver balloons before they escape to reveal your special message for Rosita!</p>
+                    <div class="balloon-scene" id="balloonScene">
+                        <div class="balloon-sparkles" aria-hidden="true"></div>
+                        <div class="balloon-confetti" id="balloonConfetti" aria-hidden="true"></div>
+                        <div class="catch-balloon-container" id="catchBalloonContainer" role="group" aria-label="Catch six silver balloons"></div>
+                    </div>
+                    <p class="balloon-tap-hint" id="balloonTapHint" aria-live="polite">Catch the silver balloon to reveal the surprise.</p>
+                </div>
+
+                <div class="appreciation-stage appreciation-result" id="appreciationResult" hidden>
+                    <p class="result-eyebrow">✦ A FEW OF THE MANY REASONS ✦</p>
+                    <h3>THAT'S WHAT MAKES ROSITA <span>SPECIAL! 💙</span></h3>
+                    <p class="result-message">Sometimes, words are not enough to describe a beautiful soul. The qualities you've selected are just a few of the reasons Rosita deserves to be celebrated.</p>
+                    <ul class="selected-qualities" id="selectedQualities" aria-label="Your selected qualities"></ul>
+                    <button class="games-primary-button" id="celebrateRositaButton" type="button">CELEBRATE ROSITA <span>✦</span></button>
+                    <button class="games-text-button" id="restartGameButton" type="button">START AGAIN</button>
+                </div>
+
+                <div class="appreciation-stage celebration-finish" id="appreciationFinish" aria-live="polite" hidden>
+                    <div class="silver-stars" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span><span>✧</span><span>✦</span></div>
+                    <p class="result-eyebrow">✦ ALWAYS WORTH CELEBRATING ✦</p>
+                    <h3>Rosita, never forget <span>how wonderful you are.</span></h3>
+                    <p class="result-message">You deserve every beautiful thing life has to offer.</p>
+                    <button class="games-text-button" id="restartAfterCelebrationButton" type="button">PLAY AGAIN</button>
+                </div>
+            </section>
+
+            <section class="experience-card wish-card" aria-labelledby="wishTitle">
+                <div class="experience-heading">
+                    <span class="experience-number">02 <span>— A NOTE FROM THE HEART</span></span>
+                    <h2 id="wishTitle">A LITTLE WISH <span>FOR HER 💙</span></h2>
+                    <p class="experience-intro">Every birthday deserves beautiful wishes. Take a moment to leave Rosita a message she can always look back on.</p>
+                </div>
+
+                <div class="wish-stage" id="wishIntro">
+                    <div class="wish-envelope" aria-hidden="true">
+                        <div class="wish-envelope-flap"></div>
+                        <span>WITH LOVE</span>
+                        <b>✧</b>
+                    </div>
+                    <button class="games-primary-button" id="writeWishButton" type="button">WRITE YOUR WISH <span>→</span></button>
+                </div>
+
+                <form class="wish-form" id="wishForm" hidden>
+                    <label for="wishName">Your Name</label>
+                    <input id="wishName" name="name" type="text" maxlength="50" autocomplete="name" placeholder="How should Rosita know who it's from?">
+
+                    <label for="wishMessage">Your Birthday Wish <span class="required-label"></span></label>
+                    <textarea id="wishMessage" name="wish" rows="5" maxlength="500" required placeholder="Dear Rosita, I wish you..."></textarea>
+                    <div class="wish-form-meta">
+                        <span id="wishFormError" class="wish-form-error" role="status"></span>
+                        <span class="character-count" id="characterCount">0 / 500</span>
+                    </div>
+                   <p class="privacy-note">
+    Your wish will be saved online and displayed on this public birthday wishes wall.
+    Please don't include private information.
+</p>
+                    <button class="games-primary-button" type="submit">SEND MY WISH <span>✦</span></button>
+                </form>
+
+                <div class="wish-confirmation" id="wishConfirmation" aria-live="polite" hidden>
+                    <p class="result-eyebrow">✦ A MESSAGE MADE WITH LOVE ✦</p>
+                    <h3>YOUR WISH HAS BEEN <span>WRITTEN WITH LOVE! 🤍</span></h3>
+                    <p class="result-message">Thank you for making Rosita's celebration even more special.</p>
+                    <blockquote class="wish-display-card">
+                        <span class="wish-card-ornament" aria-hidden="true">✧</span>
+                        <p id="submittedWish"></p>
+                        <footer id="submittedWishName"></footer>
+                    </blockquote>
+                    <p class="privacy-note" id="wishDeliveryNotice">Your wish will be saved online and displayed on this public birthday wishes wall. Please don't include private information.</p>
+                    <button class="games-primary-button" id="writeAnotherWishButton" type="button">WRITE ANOTHER WISH <span>→</span></button>
+                </div>
+                <div class="birthday-wishes-wall" id="birthdayWishesWall">
+
+    <div class="wishes-wall-heading">
+        <span class="experience-number">A COLLECTION OF LOVE</span>
+        <h3>WISHES FOR <span>ROSITA</span></h3>
+        <p>Beautiful words, heartfelt wishes and little reminders of how special Rosita is.</p>
+    </div>
+
+    <p class="wishes-wall-status" id="wishesWallStatus" role="status">
+        Loading beautiful wishes...
+    </p>
+
+    <div class="wishes-list" id="wishesList" aria-live="polite">
+    </div>
+
+    <button
+        class="games-text-button"
+        id="loadMoreWishesButton"
+        type="button"
+        hidden
+    >
+        LOAD MORE WISHES
+    </button>
+
+</div>
+            </section>
+        </div>
+
+        <div class="games-return-wrap">
+            <a href="index.html" class="games-back-link games-return-link">← RETURN TO CELEBRATION</a>
+        </div>
+    </main>
+
+   
+    <script src="balloons.js"></script>
+    <script type="module" src="games.js"></script>
+</body>
+</html>

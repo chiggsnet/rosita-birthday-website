@@ -1,0 +1,1918 @@
+/* =========================================
+   ROSITA'S LUXURY BIRTHDAY WEBSITE
+   ROYAL BLUE & SILVER EDITION
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --royal-blue: #0647c7;
+    --bright-blue: #1769ff;
+    --deep-blue: #020d32;
+    --silver: #c0c0c0;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--deep-blue);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.welcome-screen {
+    min-height: 100vh;
+    min-height: 100svh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 65px 20px;
+
+    background:
+        radial-gradient(ellipse at 50% 45%, rgba(37, 111, 255, 0.85), transparent 55%),
+        radial-gradient(circle at 10% 10%, #1749a8, transparent 35%),
+        linear-gradient(135deg, #020a25, #0637a0, #020a25);
+}
+
+/* LIGHTING */
+
+.background-glow {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    background: rgba(192, 192, 192, 0.22);
+    filter: blur(110px);
+    animation: glow 5s infinite alternate;
+}
+
+/* MAIN CONTENT */
+
+.welcome-content {
+    width: 100%;
+    max-width: 750px;
+    position: relative;
+    top: -20px;
+    z-index: 5;
+    text-align: center;
+    animation: appear 1.5s ease forwards;
+}
+
+/* TOP LABEL */
+
+.top-label {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid rgba(255,255,255,0.55);
+    border-radius: 50px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.12);
+}
+
+/* CROWN */
+
+.crown {
+    font-size: 65px;
+    color: #f5f5f5;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px white);
+}
+
+/* INTRODUCTION */
+
+.intro-text {
+    color: #e1eaff;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 9vw, 85px);
+    line-height: 1.05;
+    font-weight: 500;
+    text-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+h1 span {
+    display: block;
+    font-size: clamp(75px, 15vw, 130px);
+    font-weight: 700;
+    font-style: italic;
+
+    background: linear-gradient(
+        120deg,
+        #ffffff,
+        #bfc8dc,
+        #ffffff,
+        #8e9fbd,
+        #ffffff
+    );
+
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    filter: drop-shadow(0 8px 20px rgba(255,255,255,0.25));
+
+    animation: silverShine 5s linear infinite;
+}
+
+/* SILVER DIVIDER */
+
+.silver-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 30px 0;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.silver-divider span {
+    width: 90px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffffff);
+}
+
+.silver-divider span:last-child {
+    transform: rotate(180deg);
+}
+
+/* DESCRIPTION */
+
+.description {
+    max-width: 470px;
+    margin: 0 auto;
+    color: #e0eaff;
+    font-size: 13px;
+    line-height: 2;
+    font-weight: 300;
+}
+
+/* BIRTHDAY DATE */
+
+.birthday-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(12px, 2.5vw, 18px);
+    margin: 35px 0;
+}
+
+.birthday-date > span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 6vw, 42px);
+    line-height: 35px;
+    color: white;
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
+    transform: translateY(-4px);
+}
+
+.birthday-date div {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.birthday-date strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 5vw, 36px);
+    font-weight: 500;
+    line-height: 0;
+    letter-spacing: 0.5px;
+    color: white;
+    white-space: nowrap;
+}
+
+/* ENTER BUTTON */
+
+.enter-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 19px 35px;
+
+    border: 2px solid white;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #aebbd4,
+        #ffffff
+    );
+
+    color: #061b52;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+    transition: 0.4s ease;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.3),
+        0 0 45px rgba(65,130,255,0.3);
+}
+
+.enter-button:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 10px 40px rgba(255,255,255,0.4);
+}
+
+.enter-button:disabled {
+    cursor: wait;
+    opacity: 0.8;
+}
+
+.arrow {
+    font-size: 21px;
+}
+
+/* FOOTER */
+
+.bottom-note {
+    margin-top: 55px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #c5d6ff;
+}
+
+/* DECORATIVE CIRCLES */
+
+.decorative-circle {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 600px;
+    height: 600px;
+}
+
+.circle-two {
+    width: 850px;
+    height: 850px;
+}
+
+/* FLOATING STARS */
+
+.floating-star {
+    position: absolute;
+    color: #ffffff;
+    opacity: 0.85;
+    text-shadow: 0 0 20px white;
+    animation: float 4s ease-in-out infinite;
+}
+
+.star-one {
+    top: 12%;
+    left: 12%;
+    font-size: 35px;
+}
+
+.star-two {
+    top: 25%;
+    right: 10%;
+    font-size: 45px;
+    animation-delay: 1s;
+}
+
+.star-three {
+    bottom: 18%;
+    left: 16%;
+    font-size: 28px;
+    animation-delay: 2s;
+}
+
+.star-four {
+    bottom: 12%;
+    right: 13%;
+    font-size: 38px;
+    animation-delay: 1.5s;
+}
+
+/* LUXURY BALLOON DECORATIONS */
+
+.welcome-screen::before,
+.welcome-screen::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 240px;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 35% 25%, white, transparent 9%),
+        radial-gradient(ellipse at 35% 30%, #8ab8ff, #1454c5 48%, #031a55 85%);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    animation: float 5s ease-in-out infinite;
+}
+
+.welcome-screen::before {
+    top: 8%;
+    left: -65px;
+    transform: rotate(-15deg);
+}
+
+.welcome-screen::after {
+    bottom: 5%;
+    right: -65px;
+    animation-delay: 2s;
+    background:
+        radial-gradient(circle at 35% 25%, white, transparent 9%),
+        radial-gradient(ellipse at 35% 30%, #ffffff, #bfc8dc 48%, #657a9f 85%);
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -18px;
+    }
+}
+
+@keyframes glow {
+    from {
+        opacity: 0.5;
+        scale: 0.9;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1.2;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes silverShine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+
+    .welcome-screen {
+        padding: 45px 18px;
+    }
+
+    .top-label {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .intro-text {
+        font-size: 11px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    .enter-button {
+        padding: 16px 23px;
+        font-size: 9px;
+    }
+
+    .bottom-note {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .circle-one {
+        width: 350px;
+        height: 350px;
+    }
+
+    .circle-two {
+        width: 500px;
+        height: 500px;
+    }
+
+    .welcome-screen::before,
+    .welcome-screen::after {
+        width: 110px;
+        height: 155px;
+    }
+
+    .star-one {
+        left: 5%;
+    }
+
+    .star-two {
+        right: 5%;
+    }
+}
+/* HIDE THE CELEBRATION UNTIL THE BUTTON IS CLICKED */
+
+.celebration-section {
+    display: none;
+}
+
+.celebration-section.show {
+    display: flex;
+    animation: appear 1.2s ease forwards;
+}
+/* =========================================
+   ROSITA — LUXURY BIRTHDAY STAGE
+========================================= */
+
+.celebration-section {
+    min-height: 100vh;
+    min-height: 100svh;
+    width: 100%;
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 20px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(ellipse at 50% 45%, #246cff 0%, transparent 45%),
+        linear-gradient(135deg, #020824, #073da9, #020824);
+}
+
+.celebration-section.show {
+    display: flex;
+    animation: appear 1.2s ease forwards;
+}
+
+/* SILVER STAGE LIGHTS */
+
+.celebration-section::before,
+.celebration-section::after {
+    content: "✦";
+    position: absolute;
+    color: #ffffff;
+    font-size: clamp(90px, 18vw, 190px);
+    opacity: 0.35;
+    text-shadow: 0 0 35px white;
+    animation: float 5s ease-in-out infinite;
+}
+
+.celebration-section::before {
+    top: 7%;
+    left: 5%;
+}
+
+.celebration-section::after {
+    bottom: 5%;
+    right: 5%;
+    animation-delay: 2s;
+}
+
+/* MAIN LUXURY CARD */
+
+.celebration-content {
+    width: 100%;
+    max-width: 950px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 75px 45px;
+
+    border: 2px solid rgba(255,255,255,0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.16),
+            rgba(255,255,255,0.035)
+        );
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.4),
+        inset 0 0 50px rgba(255,255,255,0.06);
+}
+
+.celebration-content::before {
+    content: "✧";
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 35px;
+    color: #ffffff;
+}
+
+.celebration-content::after {
+    content: "✧";
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 35px;
+    color: #ffffff;
+}
+
+/* HEADING */
+
+.section-label {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    background: rgba(255,255,255,0.08);
+}
+
+.celebration-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 8vw, 80px);
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.celebration-content h2 span {
+    display: block;
+    font-size: clamp(80px, 14vw, 140px);
+    font-weight: 700;
+    font-style: italic;
+
+    background: linear-gradient(
+        120deg,
+        #ffffff,
+        #aebbd4,
+        #ffffff,
+        #8799bd,
+        #ffffff
+    );
+
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    filter: drop-shadow(0 10px 25px rgba(255,255,255,0.3));
+
+    animation: silverShine 5s linear infinite;
+}
+
+/* DECORATIVE DIVIDER */
+
+.intro-divider {
+    color: #ffffff;
+    font-size: 45px;
+    margin: 30px 0;
+    text-shadow: 0 0 20px white;
+}
+
+/* MESSAGE */
+
+.celebration-message {
+    max-width: 620px;
+    margin: auto;
+    color: #edf3ff;
+    font-size: 14px;
+    line-height: 2.3;
+    font-weight: 300;
+}
+
+/* SIGNATURE */
+
+.celebration-signature {
+    display: inline-block;
+    margin-top: 45px;
+    padding: 15px 28px;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    color: #ffffff;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .celebration-section {
+        padding: 55px 15px;
+    }
+
+    .celebration-content {
+        padding: 55px 20px;
+    }
+
+    .section-label {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .celebration-message {
+        font-size: 12px;
+        line-height: 2.1;
+    }
+
+    .celebration-signature {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+}
+/* =========================================
+   ROSITA'S HOMEPAGE PORTRAIT
+========================================= */
+
+.hero-portrait {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    max-width: none;
+
+    object-fit: cover;
+    object-position: center 65%;
+    transform: translateY(-1%) scale(1.01);
+
+    opacity: 0.55;
+
+    filter:
+        drop-shadow(0 0 30px rgba(192, 192, 192, 0.4))
+        brightness(1.15);
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* MOBILE FULL-SCREEN PORTRAIT */
+
+@media (max-width: 600px) {
+
+    .hero-portrait {
+        opacity: 0.30;
+    }
+
+    .welcome-content {
+        z-index: 5;
+    }
+}
+/* =========================================
+   ROSITA'S LUXURY MEMORY GALLERY
+========================================= */
+
+.memories-section {
+    min-height: 100vh;
+    padding: 110px 7%;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at top, #123e96, transparent 45%),
+        linear-gradient(145deg, #020824, #092d78, #020824);
+}
+
+.memories-heading {
+    max-width: 750px;
+    margin: 0 auto 75px;
+    text-align: center;
+}
+
+.gallery-label {
+    display: inline-block;
+    color: #dce6ff;
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.memories-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 7vw, 75px);
+    color: white;
+    line-height: 1.1;
+}
+
+.memories-heading h2 span {
+    display: block;
+    font-style: italic;
+
+    background: linear-gradient(
+        120deg,
+        white,
+        #aebbd4,
+        white
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.memories-heading > p {
+    max-width: 550px;
+    margin: 25px auto 0;
+    color: #cbd5e1;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.gallery-divider {
+    color: white;
+    font-size: 35px;
+    margin-top: 25px;
+}
+
+/* MEMORY GRID */
+
+.memory-grid {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+/* MEMORY CARD */
+
+.memory-card {
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.035)
+    );
+
+    border: 1px solid rgba(220,230,255,0.35);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-12px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.4),
+        0 0 25px rgba(192,192,192,0.15);
+}
+
+/* IMAGE */
+
+.memory-image {
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+    background: #071b4d;
+}
+
+.memory-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.7s ease;
+}
+
+.memory-card:hover .memory-image img {
+    transform: scale(1.08);
+}
+
+/* STORY */
+
+.memory-text {
+    padding: 30px 25px 35px;
+}
+
+.memory-number {
+    color: #bfcce5;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.memory-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: white;
+    margin: 15px 0;
+}
+
+.memory-text p {
+    color: #d1d9eb;
+    font-size: 12px;
+    line-height: 2;
+    font-weight: 300;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 950px) {
+
+    .memory-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .memories-section {
+        padding: 80px 18px;
+    }
+
+    .memories-heading {
+        margin-bottom: 45px;
+    }
+
+    .gallery-label {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .memory-image {
+        height: 420px;
+    }
+
+    .memory-text {
+        padding: 25px 22px 30px;
+    }
+
+}
+/* =========================================
+   CELEBRATION SECTION VISIBILITY CONTROL
+========================================= */
+
+/* Keep the celebration hidden initially */
+#celebrationSection {
+    display: none !important;
+}
+
+/* Reveal it only after the button is clicked */
+#celebrationSection.show {
+    display: flex !important;
+}
+/* =========================================
+   ROSITA PHOTO LIGHTBOX
+========================================= */
+
+.memory-image img {
+    cursor: zoom-in;
+    transition: transform 0.5s ease;
+}
+
+.photo-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(1, 5, 25, 0.96);
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.photo-lightbox.active {
+    display: flex;
+}
+
+.photo-lightbox img {
+    max-width: 90%;
+    max-height: 82vh;
+    object-fit: contain;
+    border: 3px solid #cbd5e1;
+    border-radius: 12px;
+    box-shadow: 0 0 35px rgba(192, 211, 255, 0.25);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    border: 1px solid silver;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-close {
+    top: 20px;
+    right: 25px;
+    font-size: 35px;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-counter {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: #cbd5e1;
+    color: #061a50;
+}
+
+@media (max-width: 600px) {
+    .photo-lightbox img {
+        max-width: 95%;
+        max-height: 75vh;
+    }
+
+    .lightbox-prev {
+        left: 5px;
+    }
+
+    .lightbox-next {
+        right: 5px;
+    }
+}
+/* VIEW MEMORIES BUTTON SECTION */
+
+.view-memories-section {
+    padding: 85px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #020824, #0b3992, #020824);
+    border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+.view-memories-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.view-memories-content > span {
+    color: #dbeafe;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.view-memories-content h2 {
+    color: white;
+    font-size: clamp(32px, 5vw, 52px);
+    margin: 20px 0;
+}
+
+.view-memories-content h2 span {
+    color: #cbd5e1;
+}
+
+.view-memories-content p {
+    color: #dbeafe;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.view-memories-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 17px 32px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #ffffff, #aebdd5);
+    color: #061b55;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+}
+
+.view-memories-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(255,255,255,0.25);
+}
+
+.games-link-wrap {
+    margin-top: 16px;
+}
+/* =========================================
+   CONTROL WHAT APPEARS BEFORE ENTER
+========================================= */
+
+/* Hide celebration message initially */
+#celebrationSection {
+    display: none !important;
+}
+
+/* Show celebration only after clicking ENTER */
+#celebrationSection.show {
+    display: flex !important;
+}
+
+/* Hide memories invitation initially */
+#viewMemoriesSection {
+    display: none !important;
+}
+
+/* Reveal memories invitation after ENTER */
+#viewMemoriesSection.show {
+    display: block !important;
+}
+
+/* =========================================
+   ROSITA'S WEBSITE — MOBILE OPTIMIZATION
+   Royal Blue & Silver Luxury Edition
+========================================= */
+
+/* PREVENT UNWANTED HORIZONTAL SCROLLING */
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (min-width: 601px) and (max-width: 950px) {
+
+    .welcome-screen {
+        padding: 65px 30px;
+    }
+
+    .hero-portrait {
+        max-width: 75%;
+        opacity: 0.35;
+    }
+
+    .celebration-content {
+        padding: 60px 35px;
+    }
+
+    .memory-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .memory-image {
+        height: 320px;
+    }
+
+}
+
+/* =========================================
+   MOBILE PHONES
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* GENERAL */
+
+    body {
+        font-size: 14px;
+    }
+
+    /* WELCOME SCREEN */
+
+    .welcome-screen {
+        min-height: 100svh;
+        padding: 45px 18px 35px;
+        align-items: center;
+    }
+
+    .welcome-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px 0;
+    }
+
+    .top-label {
+        max-width: 100%;
+        padding: 10px 16px;
+        font-size: 8px;
+        letter-spacing: 2px;
+        margin-bottom: 22px;
+    }
+
+    .crown {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+
+    .intro-text {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        line-height: 1.8;
+    }
+
+    h1 {
+        font-size: clamp(38px, 11vw, 55px);
+        line-height: 1.05;
+    }
+
+    h1 span {
+        font-size: clamp(58px, 16vw, 85px);
+        overflow-wrap: anywhere;
+    }
+
+    .silver-divider {
+        gap: 12px;
+        margin: 22px 0;
+        font-size: 20px;
+    }
+
+    .silver-divider span {
+        width: 55px;
+    }
+
+    .description {
+        width: 100%;
+        max-width: 340px;
+        font-size: 12px;
+        line-height: 1.9;
+        padding: 0 5px;
+    }
+
+    /* BIRTHDAY DATE */
+
+    .birthday-date {
+        margin: 25px 0;
+    }
+
+    /* ENTER BUTTON */
+
+    .enter-button {
+        min-height: 54px;
+        max-width: 100%;
+        padding: 15px 22px;
+        gap: 12px;
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .arrow {
+        font-size: 19px;
+    }
+
+    .bottom-note {
+        margin-top: 35px;
+        font-size: 7px;
+        letter-spacing: 1.5px;
+        line-height: 1.8;
+    }
+
+    /* PORTRAIT */
+
+    .hero-portrait {
+        opacity: 0.25;
+    }
+
+    /* DECORATIONS */
+
+    .background-glow {
+        width: 300px;
+        height: 300px;
+        filter: blur(80px);
+    }
+
+    .circle-one {
+        width: 280px;
+        height: 280px;
+    }
+
+    .circle-two {
+        width: 400px;
+        height: 400px;
+    }
+
+    .floating-star {
+        font-size: 20px;
+    }
+
+    .star-one {
+        top: 8%;
+        left: 5%;
+    }
+
+    .star-two {
+        top: 15%;
+        right: 5%;
+        font-size: 26px;
+    }
+
+    .star-three {
+        bottom: 10%;
+        left: 7%;
+    }
+
+    .star-four {
+        bottom: 8%;
+        right: 6%;
+        font-size: 23px;
+    }
+
+    .welcome-screen::before,
+    .welcome-screen::after {
+        width: 85px;
+        height: 125px;
+        opacity: 0.55;
+    }
+
+    .welcome-screen::before {
+        top: 5%;
+        left: -45px;
+    }
+
+    .welcome-screen::after {
+        bottom: 3%;
+        right: -45px;
+    }
+
+    /* =====================================
+       CELEBRATION MESSAGE
+    ===================================== */
+
+    .celebration-section {
+        min-height: 100svh;
+        padding: 55px 14px;
+    }
+
+    .celebration-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 45px 18px;
+        border-width: 1px;
+    }
+
+    .celebration-content::before {
+        top: 8px;
+        left: 10px;
+        font-size: 25px;
+    }
+
+    .celebration-content::after {
+        bottom: 8px;
+        right: 10px;
+        font-size: 25px;
+    }
+
+    .section-label {
+        padding: 10px 14px;
+        font-size: 8px;
+        letter-spacing: 2px;
+        margin-bottom: 23px;
+    }
+
+    .celebration-content h2 {
+        font-size: clamp(34px, 10vw, 48px);
+        line-height: 1.15;
+    }
+
+    .celebration-content h2 span {
+        font-size: clamp(55px, 15vw, 78px);
+        overflow-wrap: anywhere;
+    }
+
+    .intro-divider {
+        font-size: 32px;
+        margin: 23px 0;
+    }
+
+    .celebration-message {
+        width: 100%;
+        max-width: 100%;
+        font-size: 12px;
+        line-height: 2;
+        overflow-wrap: break-word;
+    }
+
+    .celebration-signature {
+        max-width: 100%;
+        margin-top: 30px;
+        padding: 13px 15px;
+        font-size: 8px;
+        letter-spacing: 1.5px;
+        line-height: 1.8;
+    }
+
+    /* =====================================
+       VIEW MEMORIES SECTION
+    ===================================== */
+
+    .view-memories-section {
+        padding: 65px 18px;
+    }
+
+    .view-memories-content {
+        width: 100%;
+    }
+
+    .view-memories-content > span {
+        font-size: 9px;
+        letter-spacing: 2px;
+        line-height: 1.8;
+    }
+
+    .view-memories-content h2 {
+        font-size: clamp(30px, 9vw, 42px);
+        line-height: 1.2;
+        margin: 18px 0;
+    }
+
+    .view-memories-content p {
+        font-size: 12px;
+        line-height: 1.9;
+        margin-bottom: 28px;
+    }
+
+    .view-memories-button {
+        width: 100%;
+        max-width: 300px;
+        min-height: 54px;
+        justify-content: center;
+        padding: 15px 18px;
+        gap: 12px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    /* =====================================
+       MEMORIES GALLERY
+    ===================================== */
+
+    .memories-section {
+        min-height: 100svh;
+        padding: 65px 15px;
+    }
+
+    .memories-heading {
+        margin-bottom: 38px;
+    }
+
+    .gallery-label {
+        font-size: 8px;
+        letter-spacing: 2px;
+        line-height: 1.8;
+    }
+
+    .memories-heading h2 {
+        font-size: clamp(35px, 10vw, 48px);
+        line-height: 1.15;
+    }
+
+    .memories-heading > p {
+        width: 100%;
+        font-size: 12px;
+        line-height: 1.9;
+        margin-top: 18px;
+    }
+
+    .gallery-divider {
+        font-size: 28px;
+    }
+
+    .memory-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .memory-card {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .memory-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 4.5;
+        background: #071b4d;
+    }
+
+    .memory-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .memory-text {
+        padding: 23px 19px 27px;
+    }
+
+    .memory-number {
+        font-size: 9px;
+    }
+
+    .memory-text h3 {
+        font-size: 27px;
+        line-height: 1.2;
+        margin: 12px 0;
+    }
+
+    .memory-text p {
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+    /* =====================================
+       PHOTO LIGHTBOX
+    ===================================== */
+
+    .photo-lightbox {
+        padding: 65px 12px 75px;
+    }
+
+    .photo-lightbox img {
+        max-width: 100%;
+        max-height: 72svh;
+        width: auto;
+        border-width: 2px;
+        border-radius: 8px;
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 43px;
+        height: 43px;
+        font-size: 29px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 42px;
+        height: 42px;
+        font-size: 23px;
+        bottom: 15px;
+        top: auto;
+    }
+
+    .lightbox-prev {
+        left: 20%;
+    }
+
+    .lightbox-next {
+        right: 20%;
+    }
+
+    .lightbox-counter {
+        bottom: 28px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+}
+
+/* =========================================
+   EXTRA SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .welcome-screen {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .top-label {
+        font-size: 7px;
+        letter-spacing: 1.5px;
+    }
+
+    h1 span {
+        font-size: 56px;
+    }
+
+    .celebration-content {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .celebration-message {
+        font-size: 11px;
+    }
+
+    .memory-text h3 {
+        font-size: 25px;
+    }
+
+    .view-memories-button {
+        font-size: 9px;
+    }
+
+}
+
+/* =========================================
+   TOUCHSCREEN & ACCESSIBILITY
+========================================= */
+
+@media (hover: none) {
+
+    .memory-card:hover {
+        transform: none;
+    }
+
+    .memory-card:hover .memory-image img {
+        transform: none;
+    }
+
+    .enter-button:hover,
+    .view-memories-button:hover {
+        transform: none;
+    }
+
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus,
+a:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+/* =========================================
+   ROSITA'S LIVE BIRTHDAY WISHES WALL
+========================================= */
+
+.birthday-wishes-wall {
+    width: 100%;
+    margin-top: 55px;
+    padding: 35px 20px;
+    border-top: 1px solid rgba(226, 232, 240, 0.3);
+    text-align: center;
+}
+
+.wishes-wall-heading {
+    max-width: 650px;
+    margin: 0 auto 28px;
+}
+
+.wishes-wall-heading .experience-number {
+    color: #cbd5e1;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.wishes-wall-heading h3 {
+    margin: 12px 0;
+    color: #fff;
+    font: 600 clamp(25px, 5vw, 38px)/1.2 'Cormorant Garamond', serif;
+}
+
+.wishes-wall-heading h3 span {
+    color: #dbeafe;
+}
+
+.wishes-wall-heading p {
+    color: #cbd5e1;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.wishes-wall-status {
+    margin: 20px auto;
+    color: #dbeafe;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.wishes-list {
+    width: 100%;
+    max-width: 750px;
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    text-align: left;
+}
+
+.wish-wall-card {
+    min-width: 0;
+    padding: 23px 20px;
+    border: 1px solid rgba(226, 232, 240, 0.55);
+    border-radius: 13px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.13),
+        rgba(255, 255, 255, 0.035)
+    );
+    box-shadow: inset 0 0 22px rgba(255, 255, 255, 0.04);
+    overflow-wrap: anywhere;
+}
+
+.wish-wall-card .wall-ornament {
+    display: block;
+    margin-bottom: 12px;
+    color: #e2e8f0;
+    font-size: 22px;
+    text-align: center;
+}
+
+.wish-wall-card .wall-message {
+    color: #fff;
+    font: 400 17px/1.8 'Cormorant Garamond', serif;
+    white-space: pre-wrap;
+}
+
+.wish-wall-card .wall-author {
+    margin-top: 17px;
+    color: #dbeafe;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+.wish-wall-card .wall-date {
+    margin-top: 7px;
+    color: #aebbd4;
+    font-size: 9px;
+    text-align: right;
+}
+
+#loadMoreWishesButton {
+    margin: 15px auto;
+}
+
+#loadMoreWishesButton[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .birthday-wishes-wall {
+        margin-top: 35px;
+        padding: 30px 5px;
+    }
+
+    .wishes-list {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .wish-wall-card {
+        padding: 20px 16px;
+    }
+
+    .wish-wall-card .wall-message {
+        font-size: 16px;
+    }
+}
+
+.site-footer {
+    position: relative;
+    overflow: hidden;
+    padding: 58px 24px 24px;
+    border-top: 1px solid rgba(226, 232, 240, 0.3);
+    background:
+        radial-gradient(ellipse at 50% 0, rgba(142, 182, 255, 0.2), transparent 58%),
+        linear-gradient(145deg, #020824, #092d78 52%, #020824);
+    color: #dbeafe;
+    text-align: center;
+    isolation: isolate;
+}
+
+.site-footer::before,
+.site-footer::after {
+    position: absolute;
+    z-index: 0;
+    color: rgba(226, 232, 240, 0.55);
+    text-shadow: 0 0 18px rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+}
+
+.site-footer::before {
+    content: "✦";
+    top: 28%;
+    left: max(8%, calc((100% - 1050px) / 2));
+    font-size: 17px;
+    animation: footer-twinkle 3s ease-in-out infinite alternate;
+}
+
+.site-footer::after {
+    content: "✧";
+    top: 22%;
+    right: max(8%, calc((100% - 1050px) / 2));
+    font-size: 23px;
+    animation: footer-twinkle 3.8s ease-in-out 0.6s infinite alternate;
+}
+
+.site-footer-content {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.site-footer-eyebrow {
+    color: #dbeafe;
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+.site-footer-divider {
+    margin: 15px 0 10px;
+    color: #f8fbff;
+    font-size: 25px;
+    text-shadow: 0 0 18px rgba(255, 255, 255, 0.7);
+}
+
+.site-footer h2 {
+    color: #fff;
+    font: 500 clamp(31px, 5vw, 46px)/1.04 'Cormorant Garamond', serif;
+    letter-spacing: 1.5px;
+}
+
+.site-footer h2 span {
+    display: block;
+    color: #cbd5e1;
+    font-style: italic;
+}
+
+.site-footer-tagline {
+    margin: 14px 0 12px;
+    color: #dbeafe;
+    font: 400 clamp(16px, 2.5vw, 20px)/1.5 'Cormorant Garamond', serif;
+}
+
+.site-footer-date {
+    color: #cbd5e1;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.site-footer-bottom {
+    width: min(1050px, 100%);
+    margin: 32px auto 0;
+    padding-top: 17px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid rgba(226, 232, 240, 0.18);
+    color: #b9c7df;
+    font-size: 9px;
+    letter-spacing: 0.3px;
+}
+
+.site-footer-made {
+    color: #e2e8f0;
+    font-style: italic;
+}
+
+.site-footer-top {
+    min-height: 38px;
+    padding: 9px 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 1px solid rgba(226, 232, 240, 0.4);
+    border-radius: 24px;
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.site-footer-top:hover {
+    transform: translateY(-2px);
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.site-footer-top:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.developer-footer {
+    padding: 18px 16px;
+    border-top: 1px solid rgba(226, 232, 240, 0.24);
+    background: linear-gradient(135deg, #020824, #092d78 52%, #020824);
+    color: #cbd5e1;
+    font: 400 10px/1.8 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.developer-footer p {
+    margin: 0;
+}
+
+.developer-footer-credit {
+    color: #e2e8f0;
+}
+
+.developer-footer a {
+    color: #e2e8f0;
+    text-decoration-color: rgba(226, 232, 240, 0.5);
+    text-underline-offset: 3px;
+}
+
+.developer-footer a:hover {
+    color: #fff;
+    text-decoration-color: currentColor;
+}
+
+.developer-footer a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+@keyframes footer-twinkle {
+    from { opacity: 0.4; transform: scale(0.82); }
+    to { opacity: 1; transform: scale(1.08); }
+}
+
+@media (max-width: 600px) {
+    .site-footer {
+        padding: 46px 18px 20px;
+    }
+
+    .site-footer-eyebrow {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .site-footer-bottom {
+        margin-top: 25px;
+        flex-direction: column;
+        gap: 12px;
+        line-height: 1.7;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-footer *,
+    .site-footer *::before,
+    .site-footer *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,148 @@
+.welcome-screen,
+.celebration-section,
+.view-memories-section,
+.games-page,
+.memories-section,
+.video-memories {
+    position: relative;
+}
+
+.floating-balloons {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.view-memories-content,
+.memories-heading,
+.memory-grid,
+.video-memories-heading,
+.video-memory-grid,
+.games-page > .games-topbar,
+.games-page > main {
+    position: relative;
+    z-index: 1;
+}
+
+.balloon-flight {
+    position: absolute;
+    top: 105%;
+    left: var(--balloon-left);
+    width: var(--balloon-size);
+    height: calc(var(--balloon-height) + var(--balloon-string));
+    animation: balloon-rise var(--balloon-duration) linear var(--balloon-delay) infinite;
+    will-change: top;
+}
+
+.balloon-drift {
+    width: 100%;
+    height: 100%;
+    animation: balloon-sway var(--sway-duration) ease-in-out var(--balloon-delay) infinite alternate;
+}
+
+.balloon {
+    position: relative;
+    width: var(--balloon-size);
+    height: var(--balloon-height);
+    border-radius: 50% 50% 46% 46%;
+    background:
+        radial-gradient(ellipse at 29% 21%, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.42) 5%, transparent 18%),
+        radial-gradient(ellipse at 34% 30%, rgba(255, 255, 255, 0.22), transparent 35%),
+        linear-gradient(110deg, var(--balloon-shadow), var(--balloon-color) 36%, var(--balloon-highlight) 52%, var(--balloon-color) 72%, var(--balloon-shadow));
+    box-shadow:
+        inset -7px -8px 12px rgba(0, 0, 0, 0.2),
+        inset 5px 4px 10px rgba(255, 255, 255, 0.18),
+        0 0 18px rgba(220, 230, 255, 0.12);
+}
+
+.balloon::before {
+    position: absolute;
+    bottom: -5px;
+    left: calc(50% - 4px);
+    width: 8px;
+    height: 9px;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    background: linear-gradient(90deg, var(--balloon-shadow), var(--balloon-color), var(--balloon-shadow));
+    content: "";
+}
+
+.balloon::after {
+    position: absolute;
+    top: calc(100% + 3px);
+    left: 50%;
+    width: 1px;
+    height: var(--balloon-string);
+    background: linear-gradient(90deg, rgba(220, 230, 255, 0.18), rgba(235, 240, 250, 0.74), rgba(150, 165, 190, 0.3));
+    content: "";
+    transform: translateX(-50%);
+    transform-origin: top;
+}
+
+.balloon-highlight {
+    position: absolute;
+    top: 17%;
+    left: 21%;
+    width: 13%;
+    height: 25%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.48);
+    filter: blur(1px);
+    transform: rotate(20deg);
+}
+
+.balloon-blue {
+    --balloon-color: #0752d0;
+    --balloon-highlight: #66a5ff;
+    --balloon-shadow: #03266f;
+}
+
+.balloon-silver {
+    --balloon-color: #aeb9ca;
+    --balloon-highlight: #f4f7fc;
+    --balloon-shadow: #657187;
+}
+
+@keyframes balloon-rise {
+    from {
+        top: 105%;
+    }
+
+    to {
+        top: -30%;
+    }
+}
+
+@keyframes balloon-sway {
+    from {
+        transform: translateX(-3px) rotate(-3deg);
+    }
+
+    to {
+        transform: translateX(4px) rotate(3deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .balloon-flight {
+        transform: scale(0.78);
+        transform-origin: top left;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .balloon-flight {
+        top: var(--balloon-resting-top);
+        animation: none;
+        will-change: auto;
+    }
+
+    .balloon {
+        animation: none;
+    }
+
+    .balloon-drift {
+        animation: none;
+    }
+}
